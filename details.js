@@ -6,6 +6,22 @@ const errorEl = document.getElementById('error');
 const emptyEl = document.getElementById('empty');
 const resultsEl = document.getElementById('results');
 
+const nombresMeses = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+function formatearFecha(fechaTexto) {
+    const fecha = new Date(fechaTexto);
+    if (isNaN(fecha.getTime())) {
+        return fechaTexto;
+    }
+    const mes = nombresMeses[fecha.getMonth()];
+    const dia = fecha.getDate();
+    const anio = fecha.getFullYear();
+    return mes + ' ' + dia + ', ' + anio;
+}
+
 function showState(state) {
     loadingEl.classList.add('hidden');
     errorEl.classList.add('hidden');
@@ -87,7 +103,7 @@ function renderAnimeDetails(anime) {
 
     const startDate = document.createElement('p');
     if (anime.aired && anime.aired.from) {
-        startDate.textContent = anime.aired.from;
+        startDate.textContent = formatearFecha(anime.aired.from);
     } else {
         startDate.textContent = 'N/A';
     }
@@ -99,7 +115,7 @@ function renderAnimeDetails(anime) {
 
     const endDate = document.createElement('p');
     if (anime.aired && anime.aired.to) {
-        endDate.textContent = anime.aired.to;
+        endDate.textContent = formatearFecha(anime.aired.to);
     } else {
         endDate.textContent = 'N/A';
     }
