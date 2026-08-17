@@ -105,47 +105,57 @@ h1 {
 .details-container {
     background-color: white;
     border-radius: 20px;
-    padding: 30px;
+    padding: 40px 50px;
     box-shadow: 0 4px 12px rgba(244, 143, 177, 0.2);
     border: 1px solid #f8bbd0;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
 }
 
 .details-container img {
-    max-width: 320px;
+    max-width: 420px;
     width: 100%;
     height: auto;
     border-radius: 16px;
-    margin-bottom: 25px;
+    margin: 0 auto 40px auto;
     display: block;
     border: 3px solid #fce4ec;
 }
 
 .details-container h2 {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     color: #880e4f;
     font-weight: 600;
+    font-size: 26px;
 }
 
 .details-container h3 {
-    margin-top: 22px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 12px;
     color: #880e4f;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .details-container p, .details-container ul {
-    color: #6a1b4a;
-    line-height: 1.7;
-    font-size: 15px;
+    color: #5a1638;
+    line-height: 1.8;
+    font-size: 16px;
 }
 
 .details-container ul {
-    padding-left: 24px;
+    padding-left: 0;
+    list-style-position: inside;
 }
 
 .details-container li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .back-btn {
@@ -160,4 +170,23 @@ h1 {
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.5px;
+}
+
+body.details-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.details-wrapper {
+    width: 100%;
+    max-width: 1100px;
+}
+
+body.details-page #results {
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
 }
